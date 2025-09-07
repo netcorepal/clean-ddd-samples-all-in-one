@@ -66,6 +66,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Application\IntegrationEventConverters\" />
+    <Folder Include="Application\IntegrationEventHandlers\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

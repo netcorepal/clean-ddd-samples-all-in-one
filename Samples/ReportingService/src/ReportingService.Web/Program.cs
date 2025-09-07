@@ -7,9 +7,6 @@ using System.Text.Json;
 using Microsoft.AspNetCore.DataProtection;
 using StackExchange.Redis;
 using FluentValidation.AspNetCore;
-using FluentValidation;
-using ReportingService.Web.Application.Queries;
-using ReportingService.Web.Application.IntegrationEventHandlers;
 using ReportingService.Web.Clients;
 using ReportingService.Web.Extensions;
 using FastEndpoints;
@@ -94,8 +91,6 @@ try
 
     #region 集成事件
 
-    builder.Services.AddTransient<OrderPaidIntegrationEventHandler>();
-
     #endregion
 
     #region 模型验证器
@@ -108,7 +103,7 @@ try
 
     #region Query
 
-    builder.Services.AddScoped<OrderQuery>();
+    builder.Services.AddAllQueries();
 
     #endregion
 

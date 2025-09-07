@@ -1,7 +1,4 @@
-﻿using ReportingService.Domain.AggregatesModel.OrderAggregate;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using ReportingService.Domain.AggregatesModel.DeliverAggregate;
+﻿using MediatR;
 using ReportingService.Domain.AggregatesModel.FinancialReportAggregate;
 using ReportingService.Domain.AggregatesModel.RegulatoryReportAggregate;
 using ReportingService.Domain.AggregatesModel.AnalysisAggregate;
@@ -29,8 +26,6 @@ public partial class ApplicationDbContext(DbContextOptions<ApplicationDbContext>
         base.ConfigureConventions(configurationBuilder);
     }
 
-    public DbSet<Order> Orders => Set<Order>();
-    public DbSet<DeliverRecord> DeliverRecords => Set<DeliverRecord>();
     public DbSet<FinancialReport> FinancialReports => Set<FinancialReport>();
     public DbSet<RegulatoryReport> RegulatoryReports => Set<RegulatoryReport>();
     public DbSet<AnalysisRecord> AnalysisRecords => Set<AnalysisRecord>();

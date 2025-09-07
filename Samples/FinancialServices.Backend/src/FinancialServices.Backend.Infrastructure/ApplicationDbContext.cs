@@ -1,7 +1,4 @@
-﻿using FinancialServices.Backend.Domain.AggregatesModel.OrderAggregate;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using FinancialServices.Backend.Domain.AggregatesModel.DeliverAggregate;
+﻿using MediatR;
 using FinancialServices.Backend.Domain.AggregatesModel.AccountAggregate;
 
 namespace FinancialServices.Backend.Infrastructure;
@@ -27,7 +24,5 @@ public partial class ApplicationDbContext(DbContextOptions<ApplicationDbContext>
         base.ConfigureConventions(configurationBuilder);
     }
 
-    public DbSet<Order> Orders => Set<Order>();
-    public DbSet<DeliverRecord> DeliverRecords => Set<DeliverRecord>();
     public DbSet<Account> Accounts => Set<Account>();
 }

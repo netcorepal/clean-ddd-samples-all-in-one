@@ -7,9 +7,6 @@ using System.Text.Json;
 using Microsoft.AspNetCore.DataProtection;
 using StackExchange.Redis;
 using FluentValidation.AspNetCore;
-using FluentValidation;
-using FinancialServices.Backend.Web.Application.Queries;
-using FinancialServices.Backend.Web.Application.IntegrationEventHandlers;
 using FinancialServices.Backend.Web.Clients;
 using FinancialServices.Backend.Web.Extensions;
 using FastEndpoints;
@@ -94,7 +91,6 @@ try
 
     #region 集成事件
 
-    builder.Services.AddTransient<OrderPaidIntegrationEventHandler>();
 
     #endregion
 
@@ -108,7 +104,7 @@ try
 
     #region Query
 
-    builder.Services.AddScoped<OrderQuery>();
+    builder.Services.AddAllQueries();
 
     #endregion
 
